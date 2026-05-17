@@ -2,6 +2,10 @@ import { motion } from 'framer-motion'
 import { CheckCircle, Send } from 'lucide-react'
 import { FormEvent, useState } from 'react'
 import { CLINIC, SPECIALTIES } from '../../data/clinic'
+import {
+  isGoogleSheetsConfigured,
+  submitAppointmentToSheet,
+} from '../../services/submitAppointment'
 import { Button } from '../ui/Button'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionHeading } from '../ui/SectionHeading'
@@ -72,18 +76,34 @@ export function AppointmentForm() {
   const [errors, setErrors] = useState<FormErrors>({})
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     const validationErrors = validate(data)
     setErrors(validationErrors)
+    setSubmitError(null)
 
     if (Object.keys(validationErrors).length > 0) return
 
+    if (!isGoogleSheetsConfigured()) {
+      setSubmitError(
+        'El envío a Google Sheets no está configurado. Crea un archivo .env con VITE_GOOGLE_SHEETS_URL y VITE_GOOGLE_SHEETS_TOKEN. Ver docs/GOOGLE_SHEETS.md'
+      )
+      return
+    }
+
     setLoading(true)
-    await new Promise((r) => setTimeout(r, 1200))
-    setLoading(false)
-    setSubmitted(true)
+    try {
+      await submitAppointmentToSheet(data)
+      setSubmitted(true)
+    } catch {
+      setSubmitError(
+        'No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo, o contáctanos por WhatsApp.'
+      )
+    } finally {
+      setLoading(false)
+    }
   }
 
   const update = (field: keyof FormData, value: string) => {
@@ -260,6 +280,15 @@ export function AppointmentForm() {
                 />
               </div>
             </div>
+
+            {submitError && (
+              <p
+                className="mt-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm"
+                role="alert"
+              >
+                {submitError}
+              </p>
+            )}
 
             <Button
               type="submit"

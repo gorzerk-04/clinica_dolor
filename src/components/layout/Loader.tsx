@@ -38,7 +38,7 @@ export function Loader() {
           className="text-center"
         >
           <p className="font-display font-bold text-xl text-medical-800">
-            Clínica Vitalis
+            Clínica del Dolor
           </p>
           <p className="text-sm text-slate-500 mt-1">Cuidando tu salud</p>
         </motion.div>

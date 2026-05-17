@@ -35,7 +35,7 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "Creando repositorio '$repoName' y subiendo código..." -ForegroundColor Cyan
 $visibility = if ($isPrivate) { "--private" } else { "--public" }
 
-Invoke-Gh repo create $repoName $visibility --source=. --remote=origin --description "Landing page Clínica Vitalis - React + Vite + Tailwind" --push
+Invoke-Gh repo create $repoName $visibility --source=. --remote=origin --description "Landing page Clínica del Dolor - React + Vite + Tailwind" --push
 
 if ($LASTEXITCODE -eq 0) {
     Invoke-Gh repo view --web

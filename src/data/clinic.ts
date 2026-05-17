@@ -1,11 +1,11 @@
 export const CLINIC = {
-  name: 'Clínica Vitalis',
+  name: 'Clínica del Dolor',
   tagline: 'Salud integral con excelencia humana',
   phone: '+52 55 1234 5678',
   phoneRaw: '525512345678',
-  email: 'contacto@clinicavitalis.com',
+  email: 'contacto@clinicadeldolor.com',
   address: 'Av. Reforma 245, Col. Juárez, Ciudad de México, CP 06600',
-  whatsapp: 'https://wa.me/525512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Cl%C3%ADnica%20Vitalis',
+  whatsapp: 'https://wa.me/525512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Cl%C3%ADnica%20del%20Dolor',
   mapsEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888!2d-99.167!3d19.428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzQxLjAiTiA5OcKwMTAnMDEuMiJX!5e0!3m2!1ses!2smx!4v1',
   hours: {
@@ -151,7 +151,7 @@ export const TESTIMONIALS = [
     name: 'Carlos Alberto Vega',
     role: 'Paciente de traumatología',
     comment:
-      'Después de mi lesión de rodilla pensé que tardaría meses en recuperarme. El equipo de rehabilitación fue excepcional. Recomiendo Vitalis al 100%.',
+      'Después de mi lesión de rodilla pensé que tardaría meses en recuperarme. El equipo de rehabilitación fue excepcional. Recomiendo la clínica al 100%.',
     rating: 5,
     image:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',

@@ -1,4 +1,4 @@
-# Clínica Vitalis — Landing Page
+# Clínica del Dolor — Landing Page
 
 Landing page premium para clínica médica privada. React 18, TypeScript, Tailwind CSS y Framer Motion.
 
@@ -10,6 +10,15 @@ npm run dev
 ```
 
 Abre [http://localhost:5173](http://localhost:5173).
+
+## Formulario → Google Sheets
+
+Las citas del formulario se guardan en Google Sheets vía Apps Script. Guía completa: **[docs/GOOGLE_SHEETS.md](docs/GOOGLE_SHEETS.md)**
+
+```bash
+cp .env.example .env
+# Edita .env con la URL del script y el token secreto
+```
 
 ## Personalización
 

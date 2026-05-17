@@ -106,7 +106,7 @@ export function Footer() {
             <h3 className="font-display font-bold text-white mb-4">Ubicación</h3>
             <div className="rounded-xl overflow-hidden h-48 bg-medical-800">
               <iframe
-                title="Ubicación de Clínica Vitalis en Google Maps"
+                title="Ubicación de Clínica del Dolor en Google Maps"
                 src={CLINIC.mapsEmbed}
                 className="w-full h-full border-0 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
                 loading="lazy"

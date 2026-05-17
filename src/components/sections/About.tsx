@@ -14,7 +14,7 @@ export function About() {
               <div className="rounded-3xl overflow-hidden shadow-card">
                 <img
                   src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=900&fit=crop"
-                  alt="Equipo médico de Clínica Vitalis"
+                  alt="Equipo médico de Clínica del Dolor"
                   className="w-full h-[480px] object-cover"
                   loading="lazy"
                 />
@@ -37,7 +37,7 @@ export function About() {
             />
 
             <p className="text-slate-600 leading-relaxed -mt-8 mb-6">
-              Clínica Vitalis nació en 2014 con una visión clara: democratizar el acceso
+              Clínica del Dolor nació en 2014 con una visión clara: democratizar el acceso
               a atención médica de calidad sin sacrificar el trato humano. Hoy somos
               referencia en atención integral gracias a nuestro equipo multidisciplinario
               y tecnología de diagnóstico de primer nivel.
