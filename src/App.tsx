@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { AnimatePresence } from 'framer-motion'
 import { WhatsAppButton } from './components/floating/WhatsAppButton'
 import { Footer } from './components/layout/Footer'
@@ -41,6 +42,7 @@ function App() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <Analytics />
     </>
   )
 }
