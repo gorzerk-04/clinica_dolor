@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
+import { CLINIC } from '../../data/clinic'
 
 export function Loader() {
   const [visible, setVisible] = useState(true)
@@ -38,9 +39,9 @@ export function Loader() {
           className="text-center"
         >
           <p className="font-display font-bold text-xl text-medical-800">
-            Clínica del Dolor
+            {CLINIC.name}
           </p>
-          <p className="text-sm text-slate-500 mt-1">Cuidando tu salud</p>
+          <p className="text-sm text-slate-500 mt-1">{CLINIC.tagline}</p>
         </motion.div>
       </div>
     </motion.div>

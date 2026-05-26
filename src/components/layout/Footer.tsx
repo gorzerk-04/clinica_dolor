@@ -2,19 +2,15 @@ import {
   Clock,
   Facebook,
   Instagram,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
-  Youtube,
 } from 'lucide-react'
-import { CLINIC, NAV_LINKS } from '../../data/clinic'
+import { CLINIC, NAV_LINKS, SERVICES } from '../../data/clinic'
 
 const socialIcons = [
   { icon: Facebook, href: CLINIC.social.facebook, label: 'Facebook' },
   { icon: Instagram, href: CLINIC.social.instagram, label: 'Instagram' },
-  { icon: Linkedin, href: CLINIC.social.linkedin, label: 'LinkedIn' },
-  { icon: Youtube, href: CLINIC.social.youtube, label: 'YouTube' },
 ]
 
 export function Footer() {
@@ -34,8 +30,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm leading-relaxed text-blue-200/80">
-              Atención médica integral con calidez humana y tecnología de vanguardia.
-              Tu salud, nuestra prioridad.
+              {CLINIC.tagline}. Equipo multidisciplinario especializado en tratamiento del dolor y rehabilitación.
             </p>
             <div className="flex gap-3 mt-6">
               {socialIcons.map(({ icon: Icon, href, label }) => (
@@ -52,15 +47,28 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-display font-bold text-white mb-4">Enlaces rápidos</h3>
+            <h3 className="font-display font-bold text-white mb-4">Secciones</h3>
             <ul className="space-y-2">
-              {NAV_LINKS.slice(0, 6).map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     className="text-sm hover:text-health-400 transition-colors"
                   >
                     {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display font-bold text-white mb-4">Servicios</h3>
+            <ul className="space-y-2 text-sm">
+              {SERVICES.map((s) => (
+                <li key={s.id}>
+                  <a href="#servicios" className="hover:text-health-400 transition-colors">
+                    {s.title}
                   </a>
                 </li>
               ))}
@@ -76,9 +84,14 @@ export function Footer() {
               </li>
               <li className="flex gap-3">
                 <Phone size={18} className="flex-shrink-0 text-health-400" />
-                <a href={`tel:${CLINIC.phoneRaw}`} className="hover:text-white transition-colors">
-                  {CLINIC.phone}
-                </a>
+                <div className="flex flex-col">
+                  <a href={`tel:${CLINIC.phone1Raw}`} className="hover:text-white transition-colors">
+                    {CLINIC.phone1}
+                  </a>
+                  <a href={`tel:${CLINIC.phone2Raw}`} className="hover:text-white transition-colors">
+                    {CLINIC.phone2}
+                  </a>
+                </div>
               </li>
               <li className="flex gap-3">
                 <Mail size={18} className="flex-shrink-0 text-health-400" />
@@ -92,28 +105,11 @@ export function Footer() {
               <li className="flex gap-3">
                 <Clock size={18} className="flex-shrink-0 text-health-400 mt-0.5" />
                 <div>
-                  <p>{CLINIC.hours.weekdays}</p>
-                  <p>{CLINIC.hours.saturday}</p>
-                  <p className="text-health-400 font-semibold mt-1">
-                    {CLINIC.hours.emergency}
-                  </p>
+                  <p>{CLINIC.hours.schedule}</p>
+                  <p>{CLINIC.hours.time}</p>
                 </div>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="font-display font-bold text-white mb-4">Ubicación</h3>
-            <div className="rounded-xl overflow-hidden h-48 bg-medical-800">
-              <iframe
-                title="Ubicación de Clínica del Dolor en Google Maps"
-                src={CLINIC.mapsEmbed}
-                className="w-full h-full border-0 grayscale-[30%] hover:grayscale-0 transition-all duration-500"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
           </div>
         </div>
 
@@ -121,10 +117,7 @@ export function Footer() {
           <p>© {currentYear} {CLINIC.name}. Todos los derechos reservados.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">
-              Aviso de privacidad
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Términos de uso
+              Aviso de Privacidad
             </a>
           </div>
         </div>

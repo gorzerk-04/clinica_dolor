@@ -45,19 +45,19 @@ export function Navbar() {
                   scrolled ? 'text-medical-900' : 'text-white'
                 }`}
               >
-                {CLINIC.name}
+                {CLINIC.nameShort}
               </span>
               <span
-                className={`text-xs hidden sm:block ${
+                className={`text-[10px] sm:text-xs block ${
                   scrolled ? 'text-slate-500' : 'text-blue-100'
                 }`}
               >
-                {CLINIC.tagline}
+                Huánuco
               </span>
             </div>
           </a>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
@@ -73,14 +73,14 @@ export function Navbar() {
 
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href={`tel:${CLINIC.phoneRaw}`}
+              href={`tel:${CLINIC.phone1Raw}`}
               className={`flex items-center gap-2 text-sm font-medium ${
                 scrolled ? 'text-medical-600' : 'text-white'
               }`}
               aria-label="Llamar a la clínica"
             >
               <Phone size={16} />
-              {CLINIC.phone}
+              {CLINIC.phone1}
             </a>
             <Button href="#cita" size="sm" variant="secondary">
               Reservar Cita

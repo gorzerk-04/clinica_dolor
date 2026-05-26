@@ -8,7 +8,7 @@ export function WhatsAppButton() {
       href={CLINIC.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 right-4 sm:right-6 z-40 flex items-center gap-2 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-card hover:shadow-glow transition-shadow"
+      className="fixed bottom-6 right-4 sm:right-6 z-40 flex items-center gap-2 bg-[#25D366] text-white pl-4 pr-5 py-3.5 rounded-full shadow-card hover:shadow-glow transition-shadow"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2, type: 'spring', stiffness: 200 }}

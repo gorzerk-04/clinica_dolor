@@ -1,201 +1,281 @@
 export const CLINIC = {
-  name: 'Clínica del Dolor',
-  tagline: 'Salud integral con excelencia humana',
-  phone: '+52 55 1234 5678',
-  phoneRaw: '525512345678',
-  email: 'contacto@clinicadeldolor.com',
-  address: 'Av. Reforma 245, Col. Juárez, Ciudad de México, CP 06600',
-  whatsapp: 'https://wa.me/525512345678?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Cl%C3%ADnica%20del%20Dolor',
+  name: 'Clínica del Dolor Huánuco',
+  nameShort: 'Clínica del Dolor',
+  tagline: 'Aliviamos tu dolor, recuperamos tu movilidad',
+  phone1: '932 327 110',
+  phone1Raw: '51932327110',
+  phone2: '976 544 225',
+  phone2Raw: '51976544225',
+  email: 'clinicadeldolorhco@gmail.com',
+  address: 'Jr. Constitución 920 — Huánuco',
+  whatsapp:
+    'https://wa.me/51932327110?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita%20en%20Cl%C3%ADnica%20del%20Dolor%20Hu%C3%A1nuco',
+  whatsappRaw: '51932327110',
   mapsEmbed:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888!2d-99.167!3d19.428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI1JzQxLjAiTiA5OcKwMTAnMDEuMiJX!5e0!3m2!1ses!2smx!4v1',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.5!2d-76.242!3d-9.93!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTUnNDguMCJTIDc2wrAxNCczMS4yIlc!5e0!3m2!1ses!2spe!4v1',
   hours: {
-    weekdays: 'Lun – Vie: 7:00 – 21:00',
-    saturday: 'Sábado: 8:00 – 14:00',
-    emergency: 'Emergencias 24/7',
+    schedule: 'Lunes — Sábado',
+    time: '8:30 AM — 7:00 PM',
   },
   social: {
     facebook: '#',
     instagram: '#',
-    linkedin: '#',
-    youtube: '#',
+    tiktok: '#',
   },
 } as const
 
 export const NAV_LINKS = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'Especialidades', href: '#especialidades' },
-  { label: 'Beneficios', href: '#beneficios' },
   { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Testimonios', href: '#testimonios' },
-  { label: 'Proceso', href: '#proceso' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Especialistas', href: '#especialistas' },
+  { label: 'Tecnología', href: '#tecnologia' },
+  { label: 'Contacto', href: '#contacto' },
 ] as const
 
-export const HERO_STATS = [
-  { value: '10+', label: 'Años de experiencia' },
-  { value: '24h', label: 'Atención inmediata' },
-  { value: '100%', label: 'Especialistas certificados' },
-  { value: 'HD', label: 'Equipamiento moderno' },
+export const HERO_BADGES = [
+  '✓ Especialistas certificados',
+  '✓ Cirugía mínimamente invasiva',
+  '✓ Tecnología avanzada',
+  '✓ Atención integral',
 ] as const
 
-export const SPECIALTIES = [
+export const VALUES = [
   {
-    id: 'general',
-    title: 'Medicina General',
-    description:
-      'Evaluación integral, prevención y tratamiento de enfermedades comunes con seguimiento cercano.',
-    icon: 'Stethoscope',
+    title: 'Empatía',
+    description: 'Nos ponemos en el lugar del paciente para entender su dolor.',
+    icon: 'Heart',
   },
   {
-    id: 'pediatria',
-    title: 'Pediatría',
-    description:
-      'Cuidado especializado para bebés, niños y adolescentes en un ambiente cálido y seguro.',
-    icon: 'Baby',
+    title: 'Experticia',
+    description: 'Años de formación y experiencia respaldan cada diagnóstico.',
+    icon: 'GraduationCap',
   },
   {
-    id: 'cardiologia',
-    title: 'Cardiología',
-    description:
-      'Diagnóstico cardiovascular avanzado con estudios de última generación y plan personalizado.',
-    icon: 'HeartPulse',
+    title: 'Precisión',
+    description: 'Diagnósticos certeros con tecnología de última generación.',
+    icon: 'Target',
   },
   {
-    id: 'ginecologia',
-    title: 'Ginecología',
+    title: 'Innovación',
+    description: 'Tratamientos modernos y técnicas quirúrgicas avanzadas.',
+    icon: 'Lightbulb',
+  },
+  {
+    title: 'Transparencia',
+    description: 'Comunicación clara sobre diagnóstico, tratamiento y costos.',
+    icon: 'Eye',
+  },
+  {
+    title: 'Compromiso con el paciente',
+    description: 'Tu recuperación es nuestra prioridad en cada etapa.',
+    icon: 'HandHeart',
+  },
+] as const
+
+export const DIFFERENTIATORS = [
+  {
+    title: 'Equipo multidisciplinario',
     description:
-      'Salud femenina integral: control prenatal, prevención y tratamientos con total privacidad.',
-    icon: 'Flower2',
+      'Neurocirujanos, traumatólogos, reumatólogos y rehabilitación trabajando coordinadamente.',
+    icon: 'Users',
+  },
+  {
+    title: 'Diagnóstico preciso',
+    description:
+      'Tratamiento basado en evaluación especializada y tecnología moderna.',
+    icon: 'Scan',
+  },
+  {
+    title: 'Cirugía mínimamente invasiva',
+    description: 'Menor recuperación y procedimientos avanzados.',
+    icon: 'Microscope',
+  },
+  {
+    title: 'Todo en un solo lugar',
+    description: 'Diagnóstico, tratamiento y rehabilitación integrados.',
+    icon: 'Building2',
+  },
+  {
+    title: 'Tecnología avanzada',
+    description: 'Equipamiento moderno y rehabilitación especializada.',
+    icon: 'Cpu',
+  },
+  {
+    title: 'Atención humana',
+    description: 'Trato cercano, transparente y profesional.',
+    icon: 'HeartHandshake',
+  },
+] as const
+
+export const SERVICES = [
+  {
+    id: 'neurocirugia',
+    title: 'Neurocirugía',
+    doctor: 'Dr. Victor Cori',
+    icon: 'Brain',
+    color: 'from-blue-600 to-indigo-700',
+    services: [
+      'Cirugía endoscópica de columna',
+      'Cirugía microscópica',
+      'Infiltraciones ecoguiadas',
+      'Arco en C',
+      'Bloqueos de dolor',
+    ],
+    pathologies: [
+      'Hernia discal',
+      'Lumbalgia',
+      'Cervicalgia',
+      'Ciática',
+      'Escoliosis',
+      'Estenosis',
+      'Tumores cerebrales',
+      'Migraña',
+      'Epilepsia',
+      'Fibromialgia',
+      'TEC',
+      'Parkinson',
+    ],
   },
   {
     id: 'traumatologia',
     title: 'Traumatología',
-    description:
-      'Atención de lesiones musculoesqueléticas, rehabilitación y recuperación funcional.',
+    doctor: 'Dr. Alfredo Araujo',
     icon: 'Bone',
+    color: 'from-emerald-600 to-teal-700',
+    services: [
+      'Infiltraciones',
+      'Prótesis de cadera',
+      'Prótesis de rodilla',
+      'Reconstrucción ligamentaria',
+      'Artroscopia',
+      'Artroplastia',
+    ],
+    pathologies: [
+      'Fracturas',
+      'Luxaciones',
+      'Tendinitis',
+      'Artrosis',
+      'Lesiones deportivas',
+      'Rodilla',
+      'Hombro',
+      'Cadera',
+      'Fascitis plantar',
+    ],
   },
   {
-    id: 'dermatologia',
-    title: 'Dermatología',
-    description:
-      'Cuidado de piel, cabello y uñas con procedimientos mínimamente invasivos y resultados visibles.',
-    icon: 'Sparkles',
+    id: 'reumatologia',
+    title: 'Reumatología',
+    doctor: 'Dr. Leonardo Gonzales',
+    icon: 'Activity',
+    color: 'from-violet-600 to-purple-700',
+    services: ['Infiltraciones', 'Control farmacológico'],
+    pathologies: [
+      'Artritis reumatoide',
+      'Osteoporosis',
+      'Fibromialgia',
+      'Lupus',
+      'Gota',
+      'Vasculitis',
+      'Osteoartritis',
+      'Dolor articular crónico',
+    ],
   },
   {
-    id: 'laboratorio',
-    title: 'Laboratorio Clínico',
-    description:
-      'Análisis clínicos precisos con resultados digitales rápidos para un diagnóstico oportuno.',
-    icon: 'FlaskConical',
-  },
-] as const
-
-export const BENEFITS = [
-  {
-    title: 'Atención rápida y segura',
-    description:
-      'Tiempos de espera reducidos y protocolos de bioseguridad certificados para tu tranquilidad.',
-    icon: 'ShieldCheck',
-  },
-  {
-    title: 'Médicos especializados',
-    description:
-      'Equipo con cédula profesional, especialidad y años de experiencia en hospitales de referencia.',
-    icon: 'UserCheck',
-  },
-  {
-    title: 'Tecnología avanzada',
-    description:
-      'Equipamiento de diagnóstico de última generación para resultados precisos desde la primera visita.',
-    icon: 'Cpu',
-  },
-  {
-    title: 'Historia clínica digital',
-    description:
-      'Tu expediente siempre disponible, seguro y accesible para un seguimiento continuo sin papeles.',
-    icon: 'FileDigit',
-  },
-  {
-    title: 'Atención personalizada',
-    description:
-      'Cada paciente es único. Diseñamos planes de tratamiento adaptados a tus necesidades reales.',
-    icon: 'HeartHandshake',
-  },
-  {
-    title: 'Emergencias y soporte',
-    description:
-      'Línea de emergencias 24/7 y acompañamiento post-consulta para que nunca te sientas solo.',
-    icon: 'Siren',
-  },
-] as const
-
-export const STATS = [
-  { value: 15000, suffix: '+', label: 'Pacientes atendidos' },
-  { value: 35, suffix: '', label: 'Especialistas' },
-  { value: 12, suffix: '+', label: 'Años de experiencia' },
-  { value: 98, suffix: '%', label: 'Índice de satisfacción' },
-] as const
-
-export const TESTIMONIALS = [
-  {
-    name: 'María Elena Ríos',
-    role: 'Paciente de cardiología',
-    comment:
-      'Llegué con mucho miedo por mis palpitaciones. El Dr. Mendoza me explicó todo con paciencia y hoy me siento tranquila. La clínica es impecable.',
-    rating: 5,
-    image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face',
-  },
-  {
-    name: 'Carlos Alberto Vega',
-    role: 'Paciente de traumatología',
-    comment:
-      'Después de mi lesión de rodilla pensé que tardaría meses en recuperarme. El equipo de rehabilitación fue excepcional. Recomiendo la clínica al 100%.',
-    rating: 5,
-    image:
-      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face',
-  },
-  {
-    name: 'Ana Lucía Herrera',
-    role: 'Madre de paciente pediátrico',
-    comment:
-      'Mi hijo de 4 años odia los hospitales, pero aquí la Dra. Soto lo trató con tanto cariño que salió sonriendo. Eso no tiene precio.',
-    rating: 5,
-    image:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face',
-  },
-  {
-    name: 'Roberto Jiménez',
-    role: 'Paciente de medicina general',
-    comment:
-      'Reservé cita por WhatsApp en minutos. Me atendieron el mismo día, con estudios de laboratorio listos en 24 horas. Servicio de primer nivel.',
-    rating: 5,
-    image:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face',
+    id: 'rehabilitacion',
+    title: 'Rehabilitación y Fisioterapia',
+    doctor: '',
+    icon: 'Dumbbell',
+    color: 'from-amber-600 to-orange-700',
+    services: [
+      'Magnetoterapia Total Body',
+      'Terapia manual',
+      'Electroterapia',
+      'Ultrasonido',
+      'Termoterapia',
+      'Crioterapia',
+      'Ejercicio terapéutico',
+    ],
+    pathologies: [
+      'Rehabilitación postquirúrgica',
+      'Rehabilitación de columna',
+      'Lesiones deportivas',
+      'Neurorehabilitación',
+      'Trastornos posturales',
+    ],
   },
 ] as const
 
-export const PROCESS_STEPS = [
+export const INTEGRAL_BENEFITS = [
+  'Diagnóstico preciso',
+  'Tratamiento especializado',
+  'Recuperación coordinada',
+  'Procedimientos mínimamente invasivos',
+  'Infiltraciones rápidas y localizadas',
+  'Rehabilitación avanzada',
+] as const
+
+export const SPECIALISTS = [
   {
-    step: 1,
-    title: 'Reserva tu cita',
-    description: 'Agenda en línea, por WhatsApp o teléfono en menos de 2 minutos.',
+    name: 'Dr. Victor Cori',
+    specialty: 'Neurocirugía',
+    image: 'https://images.unsplash.com/photo-1622253694242-abeb37a33e97?w=400&h=500&fit=crop&crop=face',
+    experience: '13 años de formación médica',
+    education: [
+      'Medicina Humana — Universidad Nacional Hermilio Valdizán',
+      'Neurocirugía — Universidad Ricardo Palma',
+      'Rotaciones Hospital Nacional Hipólito Unanue',
+    ],
+    hasFullProfile: true,
   },
   {
-    step: 2,
-    title: 'Evaluación médica',
-    description: 'Valoración integral con historial digital y estudios si los necesitas.',
+    name: 'Dr. Alfredo Araujo',
+    specialty: 'Traumatología y Ortopedia',
+    image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop&crop=face',
+    experience: 'Más de 15 años de experiencia',
+    education: [
+      'Especialista por Universidad San Martín de Porres',
+      'Hospital Guillermo Almenara',
+      'INEN',
+      'Hospital Emergencias Pediátricas Grau',
+    ],
+    hasFullProfile: true,
   },
   {
-    step: 3,
-    title: 'Diagnóstico especializado',
-    description: 'Plan de tratamiento claro, explicado en lenguaje que entiendas.',
+    name: 'Dr. Leonardo Gonzales',
+    specialty: 'Reumatología',
+    image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=500&fit=crop&crop=face',
+    experience: 'Especialista en Reumatología',
+    education: ['Perfil profesional en actualización'],
+    hasFullProfile: false,
+  },
+] as const
+
+export const TECHNOLOGIES = [
+  {
+    title: 'Cirugía endoscópica',
+    description: 'Procedimientos de columna con mínima invasión y recuperación rápida.',
+    icon: 'MonitorCheck',
   },
   {
-    step: 4,
-    title: 'Seguimiento continuo',
-    description: 'Recordatorios, consultas de control y acceso a tu expediente digital.',
+    title: 'Cirugía microscópica',
+    description: 'Precisión milimétrica en intervenciones neurológicas complejas.',
+    icon: 'Microscope',
+  },
+  {
+    title: 'Infiltraciones ecoguiadas',
+    description: 'Inyecciones guiadas por ecografía para máxima precisión y alivio.',
+    icon: 'Crosshair',
+  },
+  {
+    title: 'Magnetoterapia Total Body',
+    description: 'Terapia magnética avanzada para dolor y regeneración de tejidos.',
+    icon: 'Zap',
+  },
+  {
+    title: 'Rehabilitación avanzada',
+    description: 'Equipamiento moderno para fisioterapia y recuperación funcional.',
+    icon: 'Dumbbell',
   },
 ] as const
 
@@ -203,63 +283,31 @@ export const FAQ_ITEMS = [
   {
     question: '¿Cómo puedo agendar una cita?',
     answer:
-      'Puedes reservar en línea con el formulario de esta página, escribirnos por WhatsApp o llamar a nuestra recepción. Confirmamos tu cita en minutos.',
+      'Puedes reservar en línea con el formulario de esta página, escribirnos por WhatsApp al 932 327 110 o llamarnos. Confirmamos tu cita a la brevedad.',
   },
   {
-    question: '¿Aceptan seguros médicos?',
+    question: '¿Qué especialidades atienden?',
     answer:
-      'Trabajamos con las principales aseguradoras del país. Al agendar, indícanos tu póliza y validamos cobertura antes de tu consulta.',
+      'Contamos con Neurocirugía (Dr. Victor Cori), Traumatología (Dr. Alfredo Araujo), Reumatología (Dr. Leonardo Gonzales) y Rehabilitación con fisioterapia especializada.',
   },
   {
-    question: '¿Cuánto tardan los resultados de laboratorio?',
+    question: '¿Qué es la cirugía mínimamente invasiva?',
     answer:
-      'La mayoría de estudios de rutina están listos en 24 horas. Recibirás tus resultados por correo y en tu portal de paciente digital.',
+      'Son procedimientos quirúrgicos con incisiones pequeñas que permiten menor dolor postoperatorio, recuperación más rápida y menor riesgo de complicaciones comparado con la cirugía abierta tradicional.',
+  },
+  {
+    question: '¿Cuál es el horario de atención?',
+    answer:
+      'Atendemos de lunes a sábado de 8:30 AM a 7:00 PM en Jr. Constitución 920, Huánuco.',
+  },
+  {
+    question: '¿Realizan infiltraciones el mismo día?',
+    answer:
+      'Dependiendo de la evaluación médica, algunas infiltraciones pueden realizarse el mismo día de la consulta. El especialista determinará el mejor momento según tu caso.',
   },
   {
     question: '¿Qué debo llevar a mi primera consulta?',
     answer:
-      'Identificación oficial, estudios previos si los tienes, lista de medicamentos actuales y tu póliza de seguro si aplica.',
-  },
-  {
-    question: '¿Tienen servicio de urgencias?',
-    answer:
-      'Sí. Contamos con línea de emergencias 24/7 y médico de guardia para situaciones que requieran atención inmediata.',
+      'Trae tu DNI, estudios previos si los tienes (radiografías, resonancias, análisis), lista de medicamentos actuales y cualquier informe médico relevante.',
   },
 ] as const
-
-export const BLOG_POSTS = [
-  {
-    title: '5 señales de que debes visitar al cardiólogo',
-    excerpt: 'Conocer los síntomas tempranos puede salvar vidas. Te explicamos cuándo actuar.',
-    date: '12 May 2026',
-    category: 'Prevención',
-    image:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Vacunación infantil: calendario actualizado 2026',
-    excerpt: 'Guía clara para padres sobre las vacunas esenciales por edad.',
-    date: '8 May 2026',
-    category: 'Pediatría',
-    image:
-      'https://images.unsplash.com/photo-1631217868264-e5b9bb5e4a1e?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Cuidado de la piel en temporada de calor',
-    excerpt: 'Consejos dermatológicos para proteger tu piel del sol y la deshidratación.',
-    date: '3 May 2026',
-    category: 'Dermatología',
-    image:
-      'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&h=400&fit=crop',
-  },
-] as const
-
-export const GOOGLE_REVIEWS = {
-  rating: 4.9,
-  totalReviews: 287,
-  highlights: [
-    '“Excelente atención y instalaciones modernas.”',
-    '“Los médicos son muy profesionales y humanos.”',
-    '“Sin esperas largas, muy recomendable.”',
-  ],
-} as const

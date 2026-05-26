@@ -1,6 +1,5 @@
-import { CheckCircle2 } from 'lucide-react'
-import { STATS } from '../../data/clinic'
-import { AnimatedCounter } from '../ui/AnimatedCounter'
+import { VALUES } from '../../data/clinic'
+import { getIcon } from '../../utils/icons'
 import { ScrollReveal } from '../ui/ScrollReveal'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -8,82 +7,90 @@ export function About() {
   return (
     <section id="nosotros" className="section-padding bg-slate-50 overflow-hidden">
       <div className="container-narrow">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <ScrollReveal direction="left">
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-card">
-                <img
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=900&fit=crop"
-                  alt="Equipo médico de Clínica del Dolor"
-                  className="w-full h-[480px] object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="absolute -bottom-6 -right-6 glass rounded-2xl p-6 max-w-xs hidden sm:block">
-                <p className="text-3xl font-bold text-medical-600 font-display">12+</p>
-                <p className="text-sm text-slate-600 font-medium">
-                  Años cuidando familias en la Ciudad de México
-                </p>
-              </div>
-            </div>
-          </ScrollReveal>
+        <SectionHeading
+          eyebrow="Quiénes somos"
+          title="Expertos en tratamiento del dolor y recuperación funcional"
+          subtitle=""
+        />
 
-          <ScrollReveal direction="right">
-            <SectionHeading
-              align="left"
-              eyebrow="Sobre nosotros"
-              title="Más que una clínica, tu aliado en salud"
-              subtitle=""
-            />
-
-            <p className="text-slate-600 leading-relaxed -mt-8 mb-6">
-              Clínica del Dolor nació en 2014 con una visión clara: democratizar el acceso
-              a atención médica de calidad sin sacrificar el trato humano. Hoy somos
-              referencia en atención integral gracias a nuestro equipo multidisciplinario
-              y tecnología de diagnóstico de primer nivel.
+        <ScrollReveal>
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-slate-600 text-lg leading-relaxed">
+              La Clínica del Dolor en Huánuco nace con el propósito de ofrecer un
+              enfoque integral para el tratamiento del dolor y problemas
+              musculoesqueléticos.
             </p>
+            <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+              Reunimos especialistas en{' '}
+              <strong className="text-medical-700">Neurocirugía</strong>,{' '}
+              <strong className="text-medical-700">Traumatología</strong>,{' '}
+              <strong className="text-medical-700">Reumatología</strong> y{' '}
+              <strong className="text-medical-700">Rehabilitación</strong> — todo
+              bajo un mismo lugar para evitar que el paciente tenga que derivarse
+              entre múltiples clínicas.
+            </p>
+          </div>
+        </ScrollReveal>
 
-            <div className="space-y-4 mb-8">
-              <div className="p-5 rounded-xl bg-white border border-slate-100">
-                <h3 className="font-display font-bold text-medical-800 mb-2">Misión</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Brindar atención médica integral, accesible y personalizada que mejore
-                  la calidad de vida de nuestros pacientes con ética, calidez y excelencia.
-                </p>
+        {/* Misión y Visión */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
+          <ScrollReveal delay={0.1}>
+            <div className="relative p-8 rounded-2xl bg-white border border-slate-100 shadow-soft h-full overflow-hidden group hover:shadow-card transition-shadow duration-300">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-medical-500 to-medical-700" />
+              <div className="w-12 h-12 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center mb-4 group-hover:bg-medical-600 group-hover:text-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
               </div>
-              <div className="p-5 rounded-xl bg-white border border-slate-100">
-                <h3 className="font-display font-bold text-medical-800 mb-2">Visión</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
-                  Ser la clínica privada de referencia en México por innovación,
-                  resultados clínicos y experiencia del paciente excepcional.
-                </p>
-              </div>
-            </div>
-
-            <ul className="space-y-3 mb-10">
-              {[
-                'Instalaciones certificadas y protocolos de bioseguridad',
-                'Expediente clínico digital seguro',
-                'Convenios con aseguradoras principales',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-slate-700">
-                  <CheckCircle2 className="text-health-500 flex-shrink-0" size={20} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 p-6 rounded-2xl bg-white shadow-soft">
-              {STATS.map((stat) => (
-                <AnimatedCounter
-                  key={stat.label}
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  label={stat.label}
-                />
-              ))}
+              <h3 className="font-display font-bold text-xl text-medical-900 mb-3">
+                Misión
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Aliviar el dolor y recuperar la movilidad de nuestros pacientes
+                mediante un equipo multidisciplinario, tecnología avanzada y
+                atención humana.
+              </p>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <div className="relative p-8 rounded-2xl bg-white border border-slate-100 shadow-soft h-full overflow-hidden group hover:shadow-card transition-shadow duration-300">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-health-500 to-health-600" />
+              <div className="w-12 h-12 rounded-xl bg-health-50 text-health-600 flex items-center justify-center mb-4 group-hover:bg-health-500 group-hover:text-white transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              </div>
+              <h3 className="font-display font-bold text-xl text-medical-900 mb-3">
+                Visión
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                Ser la clínica referente en Huánuco en tratamientos de columna,
+                articulaciones y rehabilitación.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        {/* Valores */}
+        <ScrollReveal delay={0.1}>
+          <h3 className="font-display font-bold text-2xl sm:text-3xl text-medical-900 text-center mb-10">
+            Nuestros Valores
+          </h3>
+        </ScrollReveal>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {VALUES.map((value, i) => (
+            <ScrollReveal key={value.title} delay={i * 0.08}>
+              <div className="group h-full bg-white rounded-2xl p-6 shadow-soft hover:shadow-card transition-all duration-300 border border-slate-100 hover:border-medical-200 hover:-translate-y-1">
+                <div className="w-14 h-14 rounded-xl bg-medical-50 text-medical-600 flex items-center justify-center group-hover:bg-medical-600 group-hover:text-white transition-colors duration-300">
+                  {getIcon(value.icon, 'w-7 h-7')}
+                </div>
+                <h4 className="mt-5 font-display font-bold text-lg text-medical-900">
+                  {value.title}
+                </h4>
+                <p className="mt-2 text-slate-600 text-sm leading-relaxed">
+                  {value.description}
+                </p>
+              </div>
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

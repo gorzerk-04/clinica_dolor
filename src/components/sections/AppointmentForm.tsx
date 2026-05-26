@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { CheckCircle, Send } from 'lucide-react'
 import { FormEvent, useState } from 'react'
-import { CLINIC, SPECIALTIES } from '../../data/clinic'
+import { CLINIC, SERVICES } from '../../data/clinic'
 import {
   isGoogleSheetsConfigured,
   submitAppointmentToSheet,
@@ -48,9 +48,9 @@ function validate(data: FormData): FormErrors {
     errors.email = 'Ingresa un correo electrónico válido'
   }
 
-  const phoneRegex = /^[\d\s+()-]{10,}$/
+  const phoneRegex = /^[\d\s+()-]{9,}$/
   if (!data.telefono.trim() || !phoneRegex.test(data.telefono.replace(/\s/g, ''))) {
-    errors.telefono = 'Ingresa un teléfono válido (mín. 10 dígitos)'
+    errors.telefono = 'Ingresa un teléfono válido (mín. 9 dígitos)'
   }
 
   if (!data.especialidad) {
@@ -211,7 +211,7 @@ export function AppointmentForm() {
                   value={data.telefono}
                   onChange={(e) => update('telefono', e.target.value)}
                   className={inputClass('telefono')}
-                  placeholder="55 1234 5678"
+                  placeholder="932 327 110"
                   aria-invalid={!!errors.telefono}
                 />
                 {errors.telefono && (
@@ -233,7 +233,7 @@ export function AppointmentForm() {
                   aria-invalid={!!errors.especialidad}
                 >
                   <option value="">Seleccionar...</option>
-                  {SPECIALTIES.map((s) => (
+                  {SERVICES.map((s) => (
                     <option key={s.id} value={s.title}>
                       {s.title}
                     </option>

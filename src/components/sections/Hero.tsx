@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, Calendar, MessageCircle, Shield } from 'lucide-react'
-import { CLINIC, HERO_STATS } from '../../data/clinic'
+import { ArrowRight, Calendar, CheckCircle2, MessageCircle } from 'lucide-react'
+import { CLINIC, HERO_BADGES } from '../../data/clinic'
 import { Button } from '../ui/Button'
 import { ScrollReveal } from '../ui/ScrollReveal'
 
@@ -13,12 +13,12 @@ export function Hero() {
     >
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=1080&fit=crop&q=80"
-          alt="Médicos atendiendo pacientes en consultorio moderno"
+          src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=1920&h=1080&fit=crop&q=80"
+          alt="Especialistas en tratamiento del dolor y rehabilitación en clínica moderna"
           className="w-full h-full object-cover"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-medical-900/95 via-medical-800/85 to-medical-700/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-medical-900/95 via-medical-800/90 to-medical-700/75" />
         <motion.div
           className="absolute inset-0 opacity-30"
           style={{
@@ -34,8 +34,8 @@ export function Hero() {
         <div className="max-w-3xl">
           <ScrollReveal>
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark text-health-300 text-sm font-medium mb-6">
-              <Shield size={16} />
-              Certificados por la Secretaría de Salud
+              <CheckCircle2 size={16} />
+              Equipo multidisciplinario en Huánuco
             </span>
           </ScrollReveal>
 
@@ -44,15 +44,23 @@ export function Hero() {
               id="hero-heading"
               className="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] tracking-tight"
             >
-              Tu salud en manos de{' '}
-              <span className="text-health-400">especialistas de confianza</span>
+              Clínica del Dolor{' '}
+              <span className="text-health-400">Huánuco</span>
             </h1>
           </ScrollReveal>
 
+          <ScrollReveal delay={0.15}>
+            <p className="mt-4 text-xl sm:text-2xl text-blue-50 leading-relaxed max-w-2xl font-medium">
+              Aliviamos tu dolor, recuperamos tu movilidad y te ayudamos a
+              volver a tu vida normal.
+            </p>
+          </ScrollReveal>
+
           <ScrollReveal delay={0.2}>
-            <p className="mt-6 text-lg sm:text-xl text-blue-100 leading-relaxed max-w-2xl">
-              Atención médica integral con tecnología moderna, profesionales
-              certificados y atención personalizada.
+            <p className="mt-4 text-base sm:text-lg text-blue-200/90 leading-relaxed max-w-2xl">
+              Equipo multidisciplinario especializado en Neurocirugía,
+              Traumatología, Reumatología y Rehabilitación, con tecnología
+              avanzada y tratamientos integrales en un solo lugar.
             </p>
           </ScrollReveal>
 
@@ -76,29 +84,23 @@ export function Hero() {
               </Button>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal delay={0.4}>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {HERO_BADGES.map((badge) => (
+                <span
+                  key={badge}
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/95 text-sm font-medium"
+                >
+                  {badge}
+                </span>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={0.4} className="mt-16">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {HERO_STATS.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + i * 0.1 }}
-                className="glass rounded-2xl p-5 text-center hover:scale-[1.02] transition-transform"
-              >
-                <p className="text-2xl sm:text-3xl font-bold text-medical-600 font-display">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-slate-600 mt-1 font-medium">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </ScrollReveal>
-
         <motion.a
-          href="#especialidades"
+          href="#nosotros"
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-white/70 hover:text-white transition-colors"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}

@@ -1,5 +1,4 @@
 import { AnimatePresence } from 'framer-motion'
-import { EmergencyButton } from './components/floating/EmergencyButton'
 import { WhatsAppButton } from './components/floating/WhatsAppButton'
 import { Footer } from './components/layout/Footer'
 import { Loader } from './components/layout/Loader'
@@ -7,14 +6,13 @@ import { Navbar } from './components/layout/Navbar'
 import { About } from './components/sections/About'
 import { AppointmentForm } from './components/sections/AppointmentForm'
 import { Benefits } from './components/sections/Benefits'
-import { BlogPreview } from './components/sections/BlogPreview'
-import { CTA } from './components/sections/CTA'
+import { Contact } from './components/sections/Contact'
 import { FAQ } from './components/sections/FAQ'
-import { GoogleReviews } from './components/sections/GoogleReviews'
 import { Hero } from './components/sections/Hero'
-import { Process } from './components/sections/Process'
-import { Specialties } from './components/sections/Specialties'
-import { Testimonials } from './components/sections/Testimonials'
+import { IntegralModel } from './components/sections/IntegralModel'
+import { Services } from './components/sections/Services'
+import { Specialists } from './components/sections/Specialists'
+import { Technology } from './components/sections/Technology'
 
 function App() {
   return (
@@ -31,20 +29,18 @@ function App() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <Specialties />
-        <Benefits />
         <About />
-        <GoogleReviews />
-        <Testimonials />
-        <Process />
+        <Benefits />
+        <Services />
+        <IntegralModel />
+        <Specialists />
+        <Technology />
         <AppointmentForm />
-        <CTA />
-        <BlogPreview />
         <FAQ />
+        <Contact />
       </main>
       <Footer />
       <WhatsAppButton />
-      <EmergencyButton />
     </>
   )
 }
