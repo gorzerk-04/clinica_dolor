@@ -39,7 +39,8 @@ function doPost(e) {
     const sheet = getOrCreateSheet()
     ensureHeaders(sheet)
 
-    sheet.appendRow([
+    const nextRow = getRealLastRow(sheet) + 1
+    sheet.getRange(nextRow, 1, 1, 7).setValues([[
       new Date(),
       nombre,
       email,
@@ -47,7 +48,7 @@ function doPost(e) {
       especialidad,
       fecha,
       mensaje,
-    ])
+    ]])
 
     Logger.log('Fila guardada en hoja: %s', SHEET_NAME)
     return webResponse(true)
@@ -99,8 +100,8 @@ function getOrCreateSheet() {
 }
 
 function ensureHeaders(sheet) {
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow([
+  if (getRealLastRow(sheet) === 0) {
+    sheet.getRange(1, 1, 1, 7).setValues([[
       'Fecha registro',
       'Nombre',
       'Email',
@@ -108,7 +109,7 @@ function ensureHeaders(sheet) {
       'Especialidad',
       'Fecha preferida',
       'Mensaje',
-    ])
+    ]])
     sheet.getRange(1, 1, 1, 7).setFontWeight('bold')
   }
 }
@@ -145,4 +146,24 @@ function testGuardarCita() {
   }
   const result = doPost(e)
   Logger.log(result.getContent())
+}
+
+/**
+ * Encuentra la última fila que realmente contiene datos (ignorando filas vacías con formato)
+ */
+function getRealLastRow(sheet) {
+  const values = sheet.getDataRange().getValues()
+  for (var i = values.length - 1; i >= 0; i--) {
+    const hasData = values[i].some(function (val) {
+      if (val === null || val === undefined) return false
+      if (typeof val === 'string') {
+        return val.trim() !== ''
+      }
+      return true
+    })
+    if (hasData) {
+      return i + 1
+    }
+  }
+  return 0
 }
